@@ -8,5 +8,18 @@ app.listen(port, function(){
 }),
 
 app.get("/", function(req,res){
-  res.send("Test");
+  var agent=useragent.parse(req.headers["user-agent"]);
+  var ip=req.headers["x-forwarded-for"];
+  if(ip){
+    var list=ip.split(",");
+    ip=list[list.length-1];
+    console.log("log: "+ip+" and "+ip.split(","));
+  } else {
+    ip=req.connection.remoteAddress;
+  }
+  res.json({
+    IP: ip,
+    "Language": req.headers["accept-language"].split(",")[0],
+    "Operating System": agent.os.family
+  });
 });
