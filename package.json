@@ -1,0 +1,24 @@
+{
+  "name": "headerparser2",
+  "version": "1.0.0",
+  "description": "free code camp challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "free",
+    "code",
+    "camp",
+    "header",
+    "parser",
+    "api"
+  ],
+  "author": "Daniel Deutsch",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "useragent": "^2.1.9"
+  }
+}
